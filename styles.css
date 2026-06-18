@@ -1,0 +1,48 @@
+:root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+
+.page-wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 90%;
+}
+
+.lp-stats-list {
+  display: grid;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 700px) {
+  .lp-stats-list {
+    grid-template: 1fr/repeat(3, 1fr);
+  }
+}
+.lp-stats-item::before {
+  content: "";
+  background: red;
+  display: block;
+  height: 4rem;
+  margin-bottom: 1rem;
+  width: auto;
+}
+.lp-stats-item span {
+  display: block;
+  text-align: center;
+}
+.lp-stats-item .emphasis {
+  font-size: 2em;
+  font-weight: bold;
+}
+.lp-stats-item.online::before {
+  background: url("images/icon-online.svg") no-repeat center/contain;
+}
+.lp-stats-item.grad::before {
+  background: url("images/icon-grad.svg") no-repeat center/contain;
+}
+.lp-stats-item.aid::before {
+  background: url("images/icon-aid.svg") no-repeat center/contain;
+}/*# sourceMappingURL=styles.css.map */

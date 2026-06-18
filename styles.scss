@@ -1,0 +1,53 @@
+$icons: 'online', 'grad', 'aid';
+
+:root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+
+.page-wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 90%;
+}
+
+.lp-stats {
+  &-list {
+    display: grid;
+    gap: 1rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 700px) {
+      grid-template: 1fr / repeat(3, 1fr);
+    }
+  }
+
+  &-item {
+
+    &::before {
+      content: '';
+      background: red;
+      display: block;
+      height: 4rem;
+      margin-bottom: 1rem;
+      width: auto;
+    }
+
+    span { 
+      display: block;
+      text-align: center;
+    }
+    .emphasis {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    @each $icon in $icons {
+      &.#{$icon}::before {
+        background: url('images/icon-#{$icon}.svg') no-repeat center / contain;
+      }
+    }
+  }
+}
